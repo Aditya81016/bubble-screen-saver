@@ -1,5 +1,5 @@
-import calcAngle from "./controller/calcAngle";
-import calcDistance from "./controller/calcDistance";
+// import calcAngle from "./controller/calcAngle";
+// import calcDistance from "./controller/calcDistance";
 import Canvas from "./model/Canvas";
 import CanvasFrame from "./model/Canvas/CanvasFrame";
 import Entity from "./model/Entity";
@@ -51,7 +51,7 @@ const defaultMotion = new EntityMotion((entity: Entity, frame: CanvasFrame) => {
     EntityMotion.onCollisionWithEntity(
       entity,
       frame,
-      (distance: number, entity2: Entity) => {
+      (_distance: number, entity2: Entity) => {
         // entity.x += distance * Math.cos(angle);
         // entity.y += distance * Math.sin(angle);
         // entity2.x -= distance * Math.cos(angle);

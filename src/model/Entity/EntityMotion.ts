@@ -1,5 +1,5 @@
 import Entity from ".";
-import calcAngle from "../../controller/calcAngle";
+// import calcAngle from "../../controller/calcAngle";
 import calcDistance from "../../controller/calcDistance";
 import calcHypotenuse from "../../controller/calcHypotenuse";
 import CanvasFrame from "../Canvas/CanvasFrame";
@@ -40,8 +40,8 @@ export default class EntityMotion {
 
   static onCollisionWithEntity(
     entity: Entity,
-    frame: CanvasFrame,
-    callback = (distance: number, entity: Entity) => {}
+    _frame: CanvasFrame,
+    callback = (_distance: number, _entity: Entity) => {}
   ) {
     const entities = entity.canvas.entities;
     const index = entities.indexOf(entity);
