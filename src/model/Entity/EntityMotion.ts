@@ -1,4 +1,7 @@
 import Entity from ".";
+import calcAngle from "../../controller/calcAngle";
+import calcDistance from "../../controller/calcDistance";
+import calcHypotenuse from "../../controller/calcHypotenuse";
 import CanvasFrame from "../Canvas/CanvasFrame";
 
 export default class EntityMotion {
@@ -35,9 +38,28 @@ export default class EntityMotion {
     }
   }
 
-  // static onCollisionWithEntity(
-  //   entity: Entity,
-  //   frame: CanvasFrame,
-  //   callback = () => {}
-  // ) {}
+  static onCollisionWithEntity(
+    entity: Entity,
+    frame: CanvasFrame,
+    callback = (distance: number, entity: Entity) => {}
+  ) {
+    const entities = entity.canvas.entities;
+    const index = entities.indexOf(entity);
+
+    for (let i = index + 1; i < entities.length; i++) {
+      const entity2 = entities[i];
+      const radius =
+        calcHypotenuse(entity.width, entity.height) +
+        calcHypotenuse(entity2.width, entity2.height);
+
+      const pos1: [number, number] = [entity.x, entity.y];
+      const pos2: [number, number] = [entity2.x, entity2.y];
+
+      const distance = calcDistance(pos1, pos2);
+
+      if (distance <= radius) {
+        callback(distance, entity2);
+      }
+    }
+  }
 }
