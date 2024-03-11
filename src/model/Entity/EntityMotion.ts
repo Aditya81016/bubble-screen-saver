@@ -35,9 +35,9 @@ export default class EntityMotion {
     }
   }
 
-  static onCollisionWithEntity(
-    entity: Entity,
-    frame: CanvasFrame,
-    callback = () => {}
-  ) {}
+  // static onCollisionWithEntity(
+  //   entity: Entity,
+  //   frame: CanvasFrame,
+  //   callback = () => {}
+  // ) {}
 }

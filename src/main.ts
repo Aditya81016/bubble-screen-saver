@@ -29,7 +29,7 @@ const defaultMotion = new EntityMotion((entity: Entity, frame: CanvasFrame) => {
 
 for (let i = 0; i < quantity; i++) {
   const image = new Image();
-  image.src = "src/assets/bubble.svg";
+  image.src = "/bubble.svg";
 
   const stats = new EntityStats({
     velocity: new Vector(100, Math.random() * 2 * Math.PI),
